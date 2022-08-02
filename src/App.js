@@ -1,15 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import styled from 'styled-components'
+import {NaviBar} from "./components/NaviBar";
 
-//import { Movies } from "./components/movies/Movies";
-import {Button} from "react-bootstrap"
+const AppWrapper = styled.div`
+width:100%;
+min-height: 100vh;
+background: cornflowerblue
+`
 
-
-function App() {
-  return (
-  <Button>
-      New Site
-  </Button>
-  );
+const App = () => {
+    return (
+        <AppWrapper>
+            <NaviBar/>
+        </AppWrapper>
+    );
 }
 
 export default App;
