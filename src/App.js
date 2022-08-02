@@ -1,12 +1,14 @@
-import { Movies } from "./components/movies/Movies";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+//import { Movies } from "./components/movies/Movies";
+import {Button} from "react-bootstrap"
 
 
 function App() {
   return (
-    <div>
-    da;ldma;d,ma;
-      <Movies/>
-    </div>
+  <Button>
+      New Site
+  </Button>
   );
 }
 
