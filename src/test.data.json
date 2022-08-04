@@ -2,6 +2,7 @@
   {
     "id": "1",
     "date": "01.07",
+    "status": true,
     "movies": [
       {
         "id": 888195,
@@ -93,6 +94,7 @@
   {
     "id": "2",
     "date": "02.07",
+    "status": true,
     "movies":[
       {
         "id": 667739,
@@ -157,7 +159,7 @@
         "original_title": "Malnazidos",
         "overview": "They're soldiers on different sides of the war. But when the dead come back to life, the only side they want to be on is the one that survives.",
         "popularity": 877.251,
-        "poster_path": "https://pics.filmaffinity.com/Malnazidos-290050143-large.jpg",
+        "poster_path": "https://m.media-amazon.com/images/M/MV5BNGMxZWNlNzQtZGFhNC00NzdmLTg3ZWMtMzk1YmM2MjRkMThhXkEyXkFqcGdeQXVyMzExODEzNDA@._V1_.jpg",
         "release_date": "2022-03-11",
         "title": "Valley of the Dead",
         "video": false,
@@ -184,6 +186,7 @@
 
     "id": "3",
     "date": "03.07",
+    "status": true,
     "movies":[
       {
         "id": 975714,

@@ -1,4 +1,4 @@
-import { useState} from "react";
+import {useEffect, useState} from "react";
 
 
 import {Popup} from "../../Popup/Popup";
@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 const BookingDate = ({dates}) => {
 
-    const {id, date, movies} = dates
+    const { movies, status} = dates
 
 
     const [popup, setPopup] = useState(false)
@@ -18,13 +18,13 @@ const BookingDate = ({dates}) => {
 
     // useEffect(() => {
     //     if (popup === true) {
-    //         localStorage.setItem('data', JSON.stringify('hello'))
+    //         localStorage.setItem('movie', JSON.stringify('hello'))
     //     }
     //
     // }, [popup])
     //
     // useEffect(() => {
-    //     if (JSON.parse(localStorage.getItem('data'))) {
+    //     if (JSON.parse(localStorage.getItem('movie'))) {
     //         setPopup(true)
     //     }
     // }, [localStorage])
@@ -42,16 +42,17 @@ const BookingDate = ({dates}) => {
                                 <h2 className='card-text'>{dates.date}</h2>
 
                                 <ul>
-                                    {movies && movies.map(movie =>
-                                        <li key={movie.id}
-                                            onClick={()=> setMovieToPopup(movie)}
-                                            onDoubleClick={() => setPopup(true)}
-                                            >
+                                     {movies && movies.map(movie =>
+                                    <li key={movie.id}
+                                        onClick={() => setMovieToPopup(movie)}
+                                        onDoubleClick={() => setPopup(true)}
+                                    >
 
-                                            <Nav.Link as={Link} to={movie.id.toString()}>
-                                                {movie.original_title}
-                                            </Nav.Link>
-                                                {movie.session_time}</li>)}
+                                        <Nav.Link as={Link} to={movie.id.toString()}>
+                                            {movie.original_title}
+                                        </Nav.Link>
+                                        {movie.session_time}</li>)
+                                }
 
 
                                 </ul>
