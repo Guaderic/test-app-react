@@ -1,147 +1,75 @@
-
-import {useState} from "react";
-import {Nav} from 'react-bootstrap'
+import { useState} from "react";
 
 
-import css from './BokkingDate.module.css'
 import {Popup} from "../../Popup/Popup";
+import { Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
-const BookingDate = () => {
 
+const BookingDate = ({dates}) => {
+
+    const {id, date, movies} = dates
 
 
     const [popup, setPopup] = useState(false)
+    const [movieToPopup, setMovieToPopup] = useState({})
+
+
+
+    // useEffect(() => {
+    //     if (popup === true) {
+    //         localStorage.setItem('data', JSON.stringify('hello'))
+    //     }
+    //
+    // }, [popup])
+    //
+    // useEffect(() => {
+    //     if (JSON.parse(localStorage.getItem('data'))) {
+    //         setPopup(true)
+    //     }
+    // }, [localStorage])
+
+
     return (
-        <div className={css.container}>
+        <div>
 
-                 <section className='py-4 py-lg-5 container'>
-                    <div className='row justify-content-center align-item-center'>
-                        <div className=' mx-0 mb-4'>
-                            <div className>
-                                <div className='card-body '>
-                                    <h5 className='card-title'>Date</h5>
-                                    <h2 className='card-text'>29.04</h2>
-                                    <button className='btn btn-primary' onClick={()=>setPopup(true)}>
-                                        Get Details</button>
-                                    <Popup trigger={popup} setTrigger={setPopup}>
-                                        <Nav.Item>dakjdh</Nav.Item>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>second Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>third Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>fourth Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                    </Popup>
-                                </div>
+            <section className='py-4 py-lg-5 container'>
+                <div className='row justify-content-center align-item-center'>
+                    <div className=' mx-0 mb-4'>
+                        <div className>
+                            <div className='card-body '>
+                                <h5 className='card-title'>Date</h5>
+                                <h2 className='card-text'>{dates.date}</h2>
 
+                                <ul>
+                                    {movies && movies.map(movie =>
+                                        <li key={movie.id}
+                                            onClick={()=> setMovieToPopup(movie)}
+                                            onDoubleClick={() => setPopup(true)}
+                                            >
+
+                                            <Nav.Link as={Link} to={movie.id.toString()}>
+                                                {movie.original_title}
+                                            </Nav.Link>
+                                                {movie.session_time}</li>)}
+
+
+                                </ul>
+                                <Popup trigger={popup} setTrigger={setPopup} movie={movieToPopup}>
+                                    <div>
+                                        <img src={movieToPopup.poster_path} alt="poster"/>
+                                        <h5>{movieToPopup.overview}</h5>
+                                    </div>
+                                    <button className='btn btn-sm btn-success'
+                                            onClick={() => setPopup(false)}>Book
+                                    </button>
+                                </Popup>
                             </div>
+
                         </div>
                     </div>
-                </section>
-                  <section className='py-4 py-lg-5 container'>
-                    <div className='row justify-content-center align-item-center'>
-                        <div className=' mx-0 mb-4'>
-                            <div>
-                                <div className='card-body justify-content-center align-item-center'>
-                                    <h5 className='card-title'>Date</h5>
-                                    <h2 className='card-text'>30.04</h2>
-                                    <button className='btn btn-primary' onClick={()=>setPopup(true)}>
-                                        Get Details</button>
-                                    <Popup trigger={popup} setTrigger={setPopup}>
-                                        <h4>first Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>second Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>third Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>fourth Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                    </Popup>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                  <section className='py-4 py-lg-5 container'>
-                    <div className='row justify-content-center align-item-center'>
-                        <div className=' mx-0 mb-4'>
-                            <div>
-                                <div className='card-body justify-content-center align-item-center'>
-                                    <h5 className='card-title'>Date</h5>
-                                    <h2 className='card-text'>31.04</h2>
-                                    <button className='btn btn-primary' onClick={()=>setPopup(true)}>
-                                        Get Details</button>
-                                    <Popup trigger={popup} setTrigger={setPopup}>
-                                        <h4>first Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>second Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>third Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>fourth Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                    </Popup>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                  <section className='py-4 py-lg-5 container'>
-                    <div className='row justify-content-center align-item-center'>
-                        <div className=' mx-0 mb-4'>
-                            <div>
-                                <div className='card-body justify-content-center align-item-center'>
-                                    <h5 className='card-title'>Date</h5>
-                                    <h2 className='card-text'>01.05</h2>
-                                    <button className='btn btn-primary' onClick={()=>setPopup(true)}>
-                                        Get Details</button>
-                                    <Popup trigger={popup} setTrigger={setPopup}>
-                                        <h4>first Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>second Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>third Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>fourth Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                    </Popup>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                  <section className='py-4 py-lg-5 container'>
-                    <div className='row justify-content-center align-item-center'>
-                        <div className=' mx-0 mb-4'>
-                            <div>
-                                <div className='card-body justify-content-center align-item-center'>
-                                    <h5 className='card-title'>Date</h5>
-                                    <h2 className='card-text'>02.05</h2>
-                                    <button className='btn btn-primary' onClick={()=>setPopup(true)}>
-                                        Get Details</button>
-                                    <Popup trigger={popup} setTrigger={setPopup}>
-                                        <h4>first Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>second Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>third Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                        <h4>fourth Movie</h4>
-                                        <button className='btn btn-sm btn-success'>Book</button>
-                                    </Popup>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-
+                </div>
+            </section>
         </div>
     );
 };

@@ -1,9 +1,9 @@
 .popup{
     position: fixed;
-    top:8em;
+    top:3em;
     left:15em;
     width: 50%;
-    height: 80vh;
+    height: 600px;
     border: 2px solid dodgerblue;
     border-radius: 10px;
     background: slategrey;
@@ -21,4 +21,9 @@
     width: 100%;
     max-width: 640px;
 }
-
+img{
+    width: 150px;
+}
+p{
+    width: 300px;
+}

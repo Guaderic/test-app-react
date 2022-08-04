@@ -1,9 +1,20 @@
-import css from './Popup.module.css'
+import css from './Popup.module.css';
+import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
+
+
+
 
 
 
 const Popup = (props) => {
+
+
+
+
+
     return (props.trigger) ? (
+
         <div >
                 <div className={css.popup}>
                     <div className={css.popupInner}>
@@ -11,7 +22,10 @@ const Popup = (props) => {
                         <br/>
                         <br/>
 
-                        <button className='btn bg-danger btn-lg ' onClick={() => props.setTrigger(false)}>Close</button>
+                        <button className='btn bg-danger btn-lg '
+                                onClick={() => props.setTrigger(false)}>
+                            <Nav.Link as={Link} to={''}>Close</Nav.Link>
+                        </button>
                     </div>
                 </div>
 
