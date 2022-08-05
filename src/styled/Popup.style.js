@@ -2,10 +2,10 @@
 
     const PopupStyle = styled.div`
     position: fixed;
-    top:3em;
+    top:0em;
     left:15em;
-    width: 50%;
-    height: 600px;
+    width: 70%;
+    height: 650px;
     border: 2px solid dodgerblue;
     border-radius: 10px;
     background: slategrey;
@@ -22,16 +22,7 @@
   
     `
 
-    const ParagraphPopup = styled.p`
-    width:400px;
-
-    `
-    const ImagePopup = styled.img`
-    width:150px;
-    `
     export {
-        ParagraphPopup,
         PopupStyle,
         PopupInner,
-        ImagePopup
     }
