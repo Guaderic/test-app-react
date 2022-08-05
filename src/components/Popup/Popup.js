@@ -15,7 +15,7 @@ const Popup = (props) => {
 
     return (props.trigger) ? (
 
-        <div >
+        <div>
                 <div className={css.popup}>
                     <div className={css.popupInner}>
                         {props.children}
