@@ -1,8 +1,7 @@
     const baseURL = process.env.REACT_APP_API
 
     const urls = {
-        users:'/users',
-        posts:'/posts'
+        movies:'/movies'
     }
 
     export default baseURL
