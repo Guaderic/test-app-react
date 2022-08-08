@@ -1,7 +1,7 @@
     import styled from "styled-components";
 
     const PopupStyle = styled.div`
-    position: absolute;
+    position: fixed;
     z-index:2;
     top:0em;
     left:15em;
