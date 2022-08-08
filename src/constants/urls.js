@@ -1,11 +1,11 @@
-const baseURL = process.env.REACT_APP_API
+    const baseURL = process.env.REACT_APP_API
 
-const urls = {
-    users:'/users',
-    posts:'/posts'
-}
+    const urls = {
+        users:'/users',
+        posts:'/posts'
+    }
 
-export default baseURL
-export {
-    urls
-}
+    export default baseURL
+    export {
+        urls
+    }

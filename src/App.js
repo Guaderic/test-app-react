@@ -1,31 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import styled from 'styled-components'
+    import 'bootstrap/dist/css/bootstrap.min.css'
+    import {Route, Routes} from "react-router-dom";
+
+    import {MainLayout, BookingDates, Popup} from "./components";
+    import {AppWrapper} from "./styled";
 
 
-import {MainLayout} from "./components/Layouts/MainLayout";
-import {Route, Routes} from "react-router-dom";
-import {BookingDates} from "./components/BookingDatePage/BookingDates/BookingDates";
-import {Popup} from "./components/Popup/Popup";
-
-const AppWrapper = styled.div`
-width:100%;
-min-height: 150vh;
-background: rgb(62,58,180);
-background: linear-gradient(90deg, rgba(62,58,180,1) 0%, rgba(253,29,29,1) 80%, rgba(252,176,69,1) 100%);
-`
-
-const App = () => {
-    return (
-        <AppWrapper>
-           <Routes>
-               <Route path={'/'} element={<MainLayout/>}>
-                   <Route path={'booking'} element={<BookingDates/>}>
-                       <Route path={':id'} element={<Popup/>}/>
+    const App = () => {
+        return (
+            <AppWrapper>
+               <Routes>
+                   <Route path={'/'} element={<MainLayout/>}>
+                       <Route path={'booking'} element={<BookingDates/>}>
+                           <Route path={':id'} element={<Popup/>}/>
+                       </Route>
                    </Route>
-               </Route>
-           </Routes>
-        </AppWrapper>
-    );
-}
+               </Routes>
+            </AppWrapper>
+        );
+    }
 
-export default App;
+    export default App;

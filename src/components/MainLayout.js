@@ -1,6 +1,5 @@
-import {NaviBar} from "../NaviBar/NaviBar";
-import {Outlet} from "react-router-dom";
-
+import {NaviBar} from './NaviBar';
+import {Outlet} from 'react-router-dom';
 
 
 const MainLayout = () => {
