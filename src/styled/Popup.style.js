@@ -1,14 +1,15 @@
     import styled from "styled-components";
 
     const PopupStyle = styled.div`
-    position: fixed;
+    position: absolute;
+    z-index:2;
     top:0em;
     left:15em;
     width: 70%;
     height: 650px;
-    border: 2px solid dodgerblue;
+    border: 5px solid snow;
     border-radius: 10px;
-    background: slategrey;
+    background: rgb(48,48,48);
 
     display: flex;
     justify-content: center;
@@ -16,6 +17,7 @@
     `
     const PopupInner = styled.div`
     position: relative;
+    z-index:2;
     padding: 32px;
     width: 100%;
     max-width: 640px;

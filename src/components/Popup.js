@@ -1,8 +1,9 @@
-    import {Nav} from 'react-bootstrap';
+    import {Button, Nav} from 'react-bootstrap';
     import {Link} from 'react-router-dom';
 
-    import {PopupInner, PopupStyle} from "../styled";
 
+
+    import {PopupInner, PopupStyle} from "../styled";
 
     const Popup = (props) => {
         return (props.trigger) ? (
@@ -12,14 +13,14 @@
                      {props.children}
                      <br/>
                         <br/>
-                        <button className='btn bg-danger btn-lg '
+                        <Button className='btn bg-danger btn-lg '
                                 onClick={() => props.setTrigger(false)}>
                             <Nav.Link as={Link} to={''}>Close</Nav.Link>
-                        </button>
+                        </Button>
                     </PopupInner>
                 </PopupStyle>
-
-         </div>) : '';
+            </div>) : '';
     };
+
 
     export {Popup};

@@ -3,7 +3,7 @@
     import {Link} from'react-router-dom';
 
     import {Popup} from './Popup';
-    import {ImagePopup, ParagraphPopup} from "../styled";
+    import {ImagePopup, ListOfMovies, ParagraphPopup, Poster} from "../styled";
 
 
     const BookingDate = ({dates}) => {
@@ -31,18 +31,20 @@
                                     <div className='card-body '>
                                         <h5 className='card-title'>Date</h5>
                                         <h2 className='card-text'>{dates.date}</h2>
-                                        <ul>
-                                             {movies && movies.map(movie => <li key={movie.id}
+                                        <div className='card'>
+                                        <ul className='list-group list-group-flush'>
+                                             {movies && movies.map(movie => <ListOfMovies className='list-group-item bg-dark text-light border-light' key={movie.id}
                                                 onClick={() => setMovieToPopup(movie)}
                                                 onDoubleClick={() => setPopup(true)}>
 
                                                 <Nav.Link as={Link} to={movie.id.toString()}>
                                                     {movie.original_title}
-                                                </Nav.Link>{movie.session_time}</li>)}
+                                                </Nav.Link>{movie.session_time} <Poster src={movie.poster_path} alt="poster"/></ListOfMovies>)}
                                         </ul>
+                                        </div>
                                         <Popup trigger={popup} setTrigger={setPopup} movie={movieToPopup}>
                                             <div>
-                                                <ImagePopup src={movieToPopup.poster_path} alt="poster"/>
+                                                <ImagePopup src={movieToPopup.poster_path} alt='poster'/>
                                                 <ParagraphPopup>{movieToPopup.overview}</ParagraphPopup>
                                             </div>
                                             <button className='btn btn-sm btn-success'

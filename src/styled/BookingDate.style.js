@@ -7,7 +7,15 @@
     const ImagePopup = styled.img`
         width:150px;
         `
+    const Poster = styled.img`
+        width:50px 
+    `
+    const ListOfMovies = styled.li`
+        
+    `
     export {
         ParagraphPopup,
-        ImagePopup
+        ImagePopup,
+        Poster,
+        ListOfMovies
     }
