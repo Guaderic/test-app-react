@@ -1,7 +1,7 @@
     import styled from "styled-components";
 
     const PopupStyle = styled.div`
-    position: absolute;
+    position: fixed;
     z-index:2;
     top:0em;
     left:15em;
@@ -16,7 +16,7 @@
     align-items: center;
     `
     const PopupInner = styled.div`
-    position: relative;
+    position: fixed;
     z-index:2;
     padding: 32px;
     width: 100%;
